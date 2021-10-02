@@ -56,7 +56,7 @@ class App(Tk):
         self.targetPos = 0
 
     def move_pos(self):
-        self.pos += (self.targetPos - self.pos) / 100
+        self.pos += (self.targetPos - self.pos) / 50
         self.update_pos()
         self.after(1, self.move_pos)
 
