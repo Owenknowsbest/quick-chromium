@@ -32,7 +32,7 @@ class App(Tk):
         keyboard.add_hotkey("ctrl+`", self.toggle)
         keyboard.add_hotkey("ctrl+alt+`", self.open_clipboard)
         self.after(100, self.move_pos)
-        # Create the widgets 
+        # Create the widgets
         self.browser = MainFrame(self)
         self.open()
         self.mainloop()
