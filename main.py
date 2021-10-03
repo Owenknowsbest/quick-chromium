@@ -289,6 +289,7 @@ class NavigationBar(Frame):
     def __init__(self, master):
         self.back_state = NONE
         self.forward_state = NONE
+        self.home_image = None
         self.back_image = None
         self.forward_image = None
         self.reload_image = None
@@ -296,19 +297,23 @@ class NavigationBar(Frame):
         Frame.__init__(self, master)
 
         # Home button
-        self.back_button = Button(self, text="Home", command=self.home)
-        self.back_button.grid(row=0, column=0)
+        self.home_image = PhotoImage(file=os.getcwd() + r"\resources\home.png")
+        self.home_button = Button(self, image=self.home_image, command=self.home, bd=0)
+        self.home_button.grid(row=0, column=0)
 
         # Back button
-        self.back_button = Button(self, text="Back", command=self.go_back)
+        self.back_image = PhotoImage(file=os.getcwd()+r"\resources\back.png")
+        self.back_button = Button(self, image=self.back_image, command=self.go_back, bd=0)
         self.back_button.grid(row=0, column=1)
 
         # Forward button
-        self.forward_button = Button(self, text="Forward", command=self.go_forward)
+        self.forward_image = PhotoImage(file=os.getcwd() + r"\resources\forward.png")
+        self.forward_button = Button(self, image=self.forward_image, command=self.go_forward, bd=0)
         self.forward_button.grid(row=0, column=2)
 
         # Reload button
-        self.reload_button = Button(self, text="Reload", command=self.reload)
+        self.reload_image = PhotoImage(file=os.getcwd() + r"\resources\reload.png")
+        self.reload_button = Button(self, image=self.reload_image, command=self.reload, bd=0)
         self.reload_button.grid(row=0, column=3)
 
         # Url entry
